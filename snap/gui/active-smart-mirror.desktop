@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Active Smart Mirror
+Comment=Active Smart Mirror that does everything
+Exec=active-smart-mirror 
+Icon=${SNAP}/meta/gui/active-smart-mirror.png
+Terminal=false
+Type=Application
+Categories=Education;

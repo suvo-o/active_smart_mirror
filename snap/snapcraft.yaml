@@ -1,0 +1,28 @@
+name: active-smart-mirror
+version: 0.1.1
+summary: Active Smart Mirror
+description: Active Smart Mirror that does everything!
+
+confinement: devmode
+base: core18
+grade: stable
+
+slots:
+  dbus-active-smart-mirror: # adjust accordingly to your app name
+    interface: dbus
+    bus: session
+    name: org.bar.active_smart_mirror # adjust accordingly to your app name and
+    
+apps:
+  active-smart-mirror:
+    command: active_smart_mirror
+    extensions: [flutter-master] # Where "master" defines which Flutter channel to use for the build
+    plugs:
+    - network
+    slots:
+      - dbus-active-smart-mirror
+parts:
+  active-smart-mirror:
+    source: .
+    plugin: flutter
+    flutter-target: lib/main.dart # The main entry-point file of the application
